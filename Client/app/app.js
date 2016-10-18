@@ -19,7 +19,7 @@ angular.module('app', ['app.auth', 'app.queue', 'app.services', 'ngRoute'])
 		// })
 		.otherwise({
 			redirectTo: '/tickets'
-		})
+		})		
 
 
 })
