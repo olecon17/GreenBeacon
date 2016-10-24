@@ -1,6 +1,6 @@
 //initialize app module, include services and auth dependencies
 
-angular.module('app', ['app.auth', 'app.queue', 'app.services', 'ngRoute'])
+angular.module('app', ['app.auth', 'app.queue', 'app.services', 'ngRoute', 'ngSanitize'])
 
 .config(function($routeProvider){
 
@@ -20,7 +20,7 @@ angular.module('app', ['app.auth', 'app.queue', 'app.services', 'ngRoute'])
 		// })
 		.otherwise({
 			redirectTo: '/tickets'
-		})		
+		})
 
 
 })
