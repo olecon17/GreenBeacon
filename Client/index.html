@@ -1,36 +1,37 @@
 <!doctype html>
-<html ng-app='app'>
+
+<html ng-app="app">
   <head>
-    <!-- <script src="./../bower_components/jquery/dist/jquery.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <title>BeaconDev</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Unica+One" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="components/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    <script src="components/bower_components/angular/angular.min.js"></script>
+    <script src="components/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="components/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script>
+        const socket = io();
+    </script>
   </head>
+
   <body>
+    <div ng-view></div>
 
-    <!-- Signin -->
-    <div ng-controller='AuthController'>
-      <input type='button' value='Sign in with github' ng-click='signin()'>
-    </div>
-
-    <!-- Queue View -->
-    <div ng-controller='QueueController'>
-      <div class='queue-container'>
-        <div class='ticket' ng-repeat='ticket in data.tickets'>
-
-          <div class='username'> {{ticket.username}} </div>
-          <div class='message'> {{ ticket.message }} </div>
-
-        </div>
-      </div>
-
-    </div>
-
-
-    <script src='app/auth/auth.js'></script>
-    <script src='app/queue/queue.js'></script>
-    <script src='app/helpform/helpform.js'></script>
-
+    <script src="app/auth/auth.js"></script>
+    <script src="app/queue/queue.js"></script>
     <script src="app/services/services.js"></script>
-    <script src='app/app.js'></script>
+    <script src="app/app.js"></script>
   </body>
+
 </html>

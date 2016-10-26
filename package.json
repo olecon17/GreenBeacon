@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon --use_strict server.js",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,15 @@
   "homepage": "https://github.com/GreenBeacon/GreenBeacon#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
-    "passport-github2": "^0.1.10"
+    "passport-github2": "^0.1.10",
+    "pg": "^6.1.0",
+    "sequelize": "^3.24.4",
+    "socket.io": "^1.5.1"
   }
 }

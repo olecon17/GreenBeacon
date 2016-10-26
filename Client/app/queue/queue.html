@@ -1,1 +1,66 @@
-<!-- Queue template -->
+
+<!-- Main page template -->
+<div class = 'headerq clearfix'>
+	<div class='logoq'>
+	    <img class='logoimgq' alt="Logo" src="/../../logo.png" /></div>
+        <button type="button" class="signout btn btn-default" ng-click="signout()">Sign out</button>
+    </div>
+
+<div id="big-container">
+
+  <!-- Tickets queue -->
+	<div id="queueContainer">
+		<div class="list-group">
+		  <div class="ticket" ng-repeat="ticket in data.tickets | filter: {solved: false} | orderBy:'-id' ">
+		    <!-- Renders each ticket to the queue -->
+		    <a class="list-group-item list-group-item-action" ng-class="{'ticket-claimed list-group-item list-group-item-action': ticket.claimed, 'list-group-item list-group-item-action': !ticket.claimed}" ng-mouseover = 'showDot(ticket.x, ticket.y)' x = {{ticket.x}} y ={{ticket.y}}>
+
+
+        	<h5 class="list-group-item-heading" ng-bind="ticket.user.displayname"></h5>
+        	<button class="claimb btn btn-1" type="button" ng-show="!ticket.ismine" ng-disabled="ticket.claimed" ng-click="claimTicket(ticket)">Claim</button>
+        	<button class="deleteb btn btn-1" type="button" ng-show="ticket.ismine && !ticket.preSolved" ng-disabled="ticket.claimed" ng-click="solveTicket(ticket)">Delete</button>
+        	<button class="solv btn btn-1" type="button" ng-show="ticket.preSolved && ticket.ismine" ng-click="solveTicket(ticket)">Solved</button>
+        	<button class="unsolv btn btn-1" type="button" ng-show="ticket.preSolved && ticket.ismine" ng-click="unsolveTicket(ticket)">Not Solved</button>
+       		<p class="list-group-item-text" ng-bind="ticket.message"></p>
+		   	</a>
+		  </div>
+		</div>
+
+		<!-- Form for submitting new tickets -->
+		<form autocomplete="off" name="input-group" class="input-group" ng-submit="addTicket()">
+		  <label class="locationtext" for="select"> Select your location: </label>
+		    <select name="select" class="form-control" ng-model="ticket.location" required>
+          <option value="Lecture Hall">Lecture Hall</option> <!-- x: 25-190; y: 50-100-->
+          <option value="Pairing Station">Pairing Station</option> <!-- x: 25-190; y: 140-210 -->
+          <option value="Kitchen">Kitchen</option><!-- x: 25-190 ; y: 240-320 -->
+          <option value="Couch">Couch</option><!-- x: 250-370  ; y: 230-325 -->
+          <option value="Senior Zone">Senior Zone</option><!-- x: 270-370 ; y: 370-610 -->
+          <option value="The Hopper">The Hopper</option><!-- x: 25-160 ; y: 470-550 -->
+          <option value="The Dijkstra">The Dijkstra</option><!-- x: 25-160 ; y: 590-655 -->
+          <option value="The Ada">The Ada</option><!-- x: 290-370 ; y: 655-760 -->
+          <option value="Entrance Hall">Entrance Hall</option><!-- x: 25-260 ; y: 690-760 -->
+		    </select>
+		    <input name="ticket" class="input-text" type="text" ng-model="ticket.message" placeholder="Enter your question here" required/>
+		    <input class="submit btn btn-default" type="submit" value="Add" ng-disabled="!ticket.location">
+		</form>
+	</div>
+
+	<!-- Map -->
+	<div id="map">
+		<svg width="400" height="800">
+		<!-- Loads map image -->
+			<image x="0" y="0" width="400" height="800" xlink:href="../../../smaller.png" />
+				<!-- Adds pulsing dots for each ticket -->
+				<foreignobject  ng-repeat="ticket in data.tickets | filter: {solved: false}" ng-attr-x="{{ticket.x}}" ng-attr-y="{{ticket.y}}">
+					<div id="holder">
+						<div class="dot" ng-style="{'border': '10px solid ' + ticket.color}"></div>
+						<div class="pulse" ng-style="{'border': '5px solid '+ ticket.color}"></div>
+					</div>
+				</foreignobject>
+			</image>
+		</svg>
+	</div>
+
+	<footer><p>&copy; 2016 Made with  &hearts; at Makersquare | BeaconDev</p></footer>
+
+</div>

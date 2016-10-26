@@ -1,0 +1,258 @@
+body {
+	font-family: "Inconsolata", "Times New Roman", serif;
+	background-color: #2d2d2d;
+}
+
+#welcome, #support {
+	color: #E8E9F9;
+	margin-left: 20px;
+  display: inline-block;
+}
+
+#welcome {
+  font-family: "Unica One", "Times New Roman", serif;
+  font-size: 54px
+}
+
+ h2 {
+  font-size: 40px
+}
+
+#support {
+	padding-bottom: 10px;
+  font-size: 23px
+}
+.signoutb {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 250px;
+}
+
+.list-group {
+	height: 575px;
+	overflow: auto;
+}
+
+.list-group, .input-group {
+   width: 450px;
+}
+.list-group {
+  margin-right: 100px;
+}
+
+.input-group {
+	padding-top: 42px;
+	display: inline-block;
+}
+
+.ticket {
+	padding-bottom: 2px;
+}
+
+.list-group-item, .form-control, .input-text {
+	background-color: #E8E9F9;
+}
+.locationtext {
+	color: #E8E9F9;
+}
+
+.input-text {
+	margin-top: 20px;
+	width:360px;
+  height: 40px
+}
+
+.submit {
+	width: 80px;
+	display: inline;
+
+}
+
+.btn {
+	color: #613DC1;
+  
+}
+
+.btn-1 {
+	display: inline;
+	float: right;
+}
+
+.list-group-item-heading {
+	display: inline
+}
+
+.ticket-claimed, .ticket-claimed:hover {
+	background-color: grey;
+}
+
+#queueContainer, #map {
+	display: inline-block
+}
+
+#big-container {
+	width: 950px;
+	margin: 0 auto;
+  margin-top: 20px
+}
+
+#map {
+	float: right;
+	margin-top: -30px;
+	position: absolute;
+}
+
+
+
+#signin {
+	width: 40%;
+	margin: 0 auto;
+	text-align:center;
+	padding-top: 50px;
+  margin-top: 80px;
+}
+
+.hiddenDot, .hiddenPulse {
+	display: none;
+}
+
+#holder {
+	margin: 50px auto;
+	width: 50px;
+	height: 50px;
+	position: relative;
+}
+
+.pulse {
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	z-index: 10;
+	position: absolute;
+}
+
+.dot {
+	background: transparent;
+	-webkit-border-radius: 60px;
+	-moz-border-radius: 60px;
+	border-radius: 60px;
+	height: 40px;
+	width: 40px;
+	-webkit-animation: pulse 3s ease-out;
+	-moz-animation: pulse 3s ease-out;
+	animation: pulse 3s ease-out;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	position: absolute;
+	top: -15px;
+	left: -15px;
+	z-index: 1;
+	opacity: 0;
+}
+
+@-moz-keyframes pulse {
+ 0% {
+	-moz-transform: scale(0.1);
+	opacity: 0.0;
+ }
+ 50% {
+	opacity: 0.3;
+ }
+ 100% {
+	-moz-transform: scale(1);
+	opacity: 0.0;
+ }
+}
+@-webkit-keyframes "pulse" {
+ 0% {
+	-webkit-transform: scale(0.1);
+	opacity: 0.0;
+ }
+ 50% {
+	opacity: 0.3;
+ }
+ 100% {
+	-webkit-transform: scale(1);
+	opacity: 0.0;
+ }
+}
+
+footer {
+    clear: both;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: -8px;
+    text-align: center;
+    font-size: 12px;
+    display: block;
+    padding-top: 10px
+}
+
+.unsolv {
+	width: 80px;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.solv, .unsolv {
+	height: 30px;
+	font-size: 12px;
+	padding: 0px;
+}
+
+.solv {
+	width: 50px;
+}
+
+
+
+.clearfix {
+  overflow: auto;
+}
+
+.logo {
+  width:180px;
+  height:180px;
+  margin: 0 auto;
+  padding-left: 5px;
+  margin-bottom: 30px;
+
+}
+
+.logo .logoimg {
+  max-width:100%; 
+  max-height:100%;
+  margin:auto;
+  display:block;
+}
+
+.headerq {
+  display: inline;
+  clear: both;
+}
+
+.signout {
+  float: right;
+  margin-top: 40px;
+  margin-right: 20px;
+  
+}
+
+.logoimgq {
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+  margin-left: 20px;
+  float: left;
+}
+.signinbtn {
+  background-color: #E8E9F9;
+  margin-left: 11px
+}
+
+.signinbtn:hover, .signout:hover {
+  background-color: #c7c8d6;
+}

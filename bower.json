@@ -18,6 +18,11 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.1"
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "jquery": "^3.1.1",
+    "bootstrap-social": "^5.0.0",
+    "socket.io": "^1.5.1"
   }
 }

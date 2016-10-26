@@ -3,4 +3,11 @@
 
 ## NPM ##
 node_modules/
-bower_components/
+Client/components/bower_components/
+
+## config files ##
+config.js
+
+
+npm-debug.log
+.env
